@@ -64,9 +64,10 @@ export function Services() {
       {/* Desktop Background Image */}
       <div className="hidden lg:block absolute inset-0 z-0">
         <Image 
-          src="/images/gallery2.png" 
+          src="/images/gallery2.jpg" 
           alt="Background" 
           fill 
+          priority
           className="object-cover object-center opacity-30 contrast-[1.1] saturate-[1.05]" 
         />
         {/* Gradients to blend edges and make text readable */}
@@ -109,14 +110,13 @@ export function Services() {
             transition={{ duration: 0.8, ease: customEase }}
             className="w-full lg:hidden mb-2"
           >
-            <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-[#0a0a0a]">
+            <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-[#0a0a0a] border border-white/5 shadow-2xl">
               <Image 
-                src="/images/gallery2.png" 
+                src="/images/gallery2.jpg" 
                 alt="Elite Training Service" 
                 fill 
-                className="object-cover object-center contrast-[1.1] saturate-[1.05] brightness-[0.95]" 
+                className="object-cover object-[center_30%] scale-125 contrast-[1.1] saturate-[1.05] brightness-[0.95]" 
               />
-              <div className="absolute inset-0 z-20 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, transparent 30%, #0a0a0a 85%)' }} />
             </div>
           </motion.div>
 

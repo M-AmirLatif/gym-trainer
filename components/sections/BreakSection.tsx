@@ -18,7 +18,7 @@ export function BreakSection() {
           className="absolute inset-0 opacity-40 md:opacity-60"
         >
           <Image 
-            src="/images/gallery1.png" 
+            src="/images/gallery1.jpg" 
             alt="Muhammad Faisal Wraich Training" 
             fill 
             className="object-cover object-center contrast-[1.1] saturate-[1.05] brightness-[0.9] scale-110" 

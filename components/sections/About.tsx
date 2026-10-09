@@ -20,9 +20,10 @@ export function About() {
       {/* Desktop Background Image */}
       <div className="hidden lg:block absolute inset-0 z-0">
         <Image 
-          src="/images/about.png" 
+          src="/images/about.jpg" 
           alt="Background" 
           fill 
+          priority
           className="object-cover object-[80%_20%] opacity-40 contrast-[1.1] saturate-[1.05]" 
         />
         {/* Gradients to blend edges and make text readable */}
@@ -42,16 +43,13 @@ export function About() {
             transition={{ duration: 0.8, ease: customEase }}
             className="w-full lg:w-1/2 lg:hidden"
           >
-            <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-2xl overflow-hidden bg-[#0a0a0a] group">
+            <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-3xl overflow-hidden bg-[#0a0a0a] group border border-white/5 shadow-2xl">
               <Image 
-                src="/images/about.png" 
+                src="/images/about.jpg" 
                 alt="Muhammad Faisal Wraich" 
                 fill 
-                className="object-cover object-[90%_20%] scale-[1.3] contrast-[1.1] saturate-[1.05] brightness-[0.95] group-hover:scale-[1.35] transition-transform duration-700" 
+                className="object-cover object-[center_30%] scale-125 contrast-[1.1] saturate-[1.05] brightness-[0.95] group-hover:scale-150 transition-transform duration-700" 
               />
-              {/* Aggressive radial overlay to fade edges */}
-              <div className="absolute inset-0 z-20 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, transparent 30%, #0a0a0a 85%)' }} />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a] opacity-80 z-20 pointer-events-none" />
             </div>
           </motion.div>
 

@@ -31,9 +31,10 @@ export function Testimonials() {
       {/* Desktop Background Image */}
       <div className="hidden lg:block absolute inset-0 z-0">
         <Image 
-          src="/images/gallery3.png" 
+          src="/images/gallery3.jpg" 
           alt="Background" 
           fill 
+          priority
           className="object-cover object-[center_20%] opacity-30 contrast-[1.1] saturate-[1.05]" 
         />
         {/* Gradients to blend edges and make text readable */}
@@ -77,14 +78,13 @@ export function Testimonials() {
               transition={{ duration: 0.8, ease: customEase }}
               className="w-full lg:hidden mb-2"
             >
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-[#0a0a0a]">
+              <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-[#0a0a0a] border border-white/5 shadow-2xl">
                 <Image 
-                  src="/images/gallery3.png" 
+                  src="/images/gallery3.jpg" 
                   alt="Client Results" 
                   fill 
-                  className="object-cover object-[center_20%] contrast-[1.1] saturate-[1.05] brightness-[0.95]" 
+                  className="object-cover object-[center_30%] scale-125 contrast-[1.1] saturate-[1.05] brightness-[0.95]" 
                 />
-                <div className="absolute inset-0 z-20 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, transparent 30%, #0a0a0a 85%)' }} />
               </div>
             </motion.div>
 
@@ -104,7 +104,7 @@ export function Testimonials() {
                   {/* Photo placeholder matching photography guidelines */}
                   <div className="w-16 h-16 rounded-full overflow-hidden bg-zinc-800 relative border-2 border-white/10 shrink-0">
                     <Image 
-                      src="/images/about.png" 
+                      src="/images/about.jpg" 
                       alt={test.name} 
                       fill 
                       className="object-cover object-top contrast-[1.1] saturate-[1.05] brightness-[0.95]" 

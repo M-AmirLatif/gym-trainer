@@ -48,10 +48,10 @@ export function Hero() {
           className="absolute inset-0 opacity-70"
         >
           <Image 
-            src="/images/hero.png" 
+            src="/images/hero.jpg" 
             alt="Muhammad Faisal Wraich" 
             fill 
-            className="object-cover object-[center_10%] contrast-[1.1] saturate-[1.05] brightness-[0.95]" 
+            className="object-cover object-[center_20%] scale-125 md:scale-110 contrast-[1.1] saturate-[1.05] brightness-[0.95]" 
             priority 
           />
         </motion.div>
