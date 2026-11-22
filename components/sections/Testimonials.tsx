@@ -35,24 +35,24 @@ export function Testimonials() {
           alt="Background" 
           fill 
           priority
-          className="object-cover object-[center_20%] opacity-30 contrast-[1.1] saturate-[1.05]" 
+          className="object-cover object-[center_20%] opacity-80 lg:opacity-85 contrast-[1.15] saturate-[1.05] brightness-[1.0]" 
         />
         {/* Gradients to blend edges and make text readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
-        <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#0a0a0a] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent" />
+        <div className="absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-[#0a0a0a] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 bg-[#0a0a0a]/70 backdrop-blur-md p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: customEase }}
-            className="text-4xl md:text-5xl font-black uppercase mb-4"
+            className="text-4xl md:text-5xl font-black uppercase mb-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
           >
             Client <span className="text-[#ff3b30]">Results</span>
           </motion.h2>
@@ -61,7 +61,7 @@ export function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: customEase, delay: 0.1 }}
-            className="text-zinc-400 text-lg font-light"
+            className="text-zinc-300 text-lg font-light drop-shadow-md"
           >
             Real people. Real discipline. Unbelievable transformations.
           </motion.p>
@@ -83,7 +83,7 @@ export function Testimonials() {
                   src="/images/gallery3.jpg" 
                   alt="Client Results" 
                   fill 
-                  className="object-cover object-[center_30%] scale-125 contrast-[1.1] saturate-[1.05] brightness-[0.95]" 
+                  className="object-cover object-[center_20%] scale-105 contrast-[1.12] saturate-[1.05] brightness-[0.98]" 
                 />
               </div>
             </motion.div>
@@ -96,7 +96,7 @@ export function Testimonials() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, ease: customEase, delay: i * 0.15 }}
-                  className="w-full bg-zinc-900/60 backdrop-blur-sm border border-white/5 p-8 rounded-3xl relative hover:bg-zinc-900 transition-colors"
+                  className="w-full bg-[#121212]/85 backdrop-blur-md border border-white/10 p-8 rounded-3xl relative hover:bg-[#161616] shadow-[0_15px_35px_rgba(0,0,0,0.6)] transition-all"
                 >
                 <Quote className="absolute top-6 right-6 w-12 h-12 text-white/5" />
                 

@@ -42,32 +42,32 @@ export function Hero() {
     <section className="relative flex flex-col justify-center pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
         <motion.div 
-          initial={{ scale: 1.1 }}
+          initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: customEase }}
-          className="absolute inset-0 opacity-70"
+          className="absolute inset-0 opacity-85 md:opacity-90"
         >
           <Image 
             src="/images/hero.jpg" 
             alt="Muhammad Faisal Wraich" 
             fill 
-            className="object-cover object-[center_20%] scale-125 md:scale-110 contrast-[1.1] saturate-[1.05] brightness-[0.95]" 
+            className="object-cover object-[center_20%] md:object-[right_20%] contrast-[1.12] saturate-[1.05] brightness-[1.0]" 
             priority 
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
-        <div className="absolute inset-0 z-20 pointer-events-none" style={{ boxShadow: 'inset 0 0 120px 60px #0a0a0a' }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent z-20 pointer-events-none" />
+        {/* Soft targeted gradient to shield text on the left while keeping the image crisp on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 z-20 pointer-events-none" style={{ boxShadow: 'inset 0 0 100px 40px #0a0a0a' }} />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-20 pointer-events-none" />
       </div>
 
       <div className="container mx-auto px-4 z-20 relative">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
           <motion.h2 
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-6 flex flex-wrap gap-x-3 md:gap-x-4"
+            className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-6 flex flex-wrap gap-x-3 md:gap-x-4 drop-shadow-[0_4px_20px_rgba(0,0,0,1)]"
           >
             {words.map((word, i) => (
               <motion.span key={i} variants={wordVariants} className={word === "Wraich" ? "text-[#ff3b30]" : ""}>

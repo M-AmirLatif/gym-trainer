@@ -24,13 +24,13 @@ export function About() {
           alt="Background" 
           fill 
           priority
-          className="object-cover object-[80%_20%] opacity-40 contrast-[1.1] saturate-[1.05]" 
+          className="object-cover object-[85%_20%] opacity-85 lg:opacity-90 contrast-[1.15] saturate-[1.05] brightness-[1.0]" 
         />
-        {/* Gradients to blend edges and make text readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
-        <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#0a0a0a] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
+        {/* Clean edge transitions leaving the subject prominent */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent" />
+        <div className="absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-[#0a0a0a] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -48,7 +48,7 @@ export function About() {
                 src="/images/about.jpg" 
                 alt="Muhammad Faisal Wraich" 
                 fill 
-                className="object-cover object-[center_30%] scale-125 contrast-[1.1] saturate-[1.05] brightness-[0.95] group-hover:scale-150 transition-transform duration-700" 
+                className="object-cover object-[center_20%] scale-105 contrast-[1.12] saturate-[1.05] brightness-[0.98] group-hover:scale-110 transition-transform duration-700" 
               />
             </div>
           </motion.div>
@@ -58,7 +58,7 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: customEase, delay: 0.2 }}
-            className="w-full lg:w-1/2 lg:mr-auto"
+            className="w-full lg:w-1/2 lg:mr-auto bg-[#0a0a0a]/80 lg:bg-[#0a0a0a]/75 backdrop-blur-md p-6 sm:p-10 rounded-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
           >
             <h2 className="text-4xl md:text-5xl font-black uppercase mb-6">
               More Than A Coach. <span className="text-[#ff3b30]">A Partner in Your Journey.</span>
