@@ -42,23 +42,23 @@ export function Hero() {
     <section className="relative flex flex-col justify-center pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
         <motion.div 
-          initial={{ scale: 1.05 }}
+          initial={{ scale: 1.03 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: customEase }}
-          className="absolute inset-0 opacity-85 md:opacity-90"
+          className="absolute inset-0 opacity-100"
         >
           <Image 
             src="/images/hero.jpg" 
             alt="Muhammad Faisal Wraich" 
             fill 
-            className="object-cover object-[center_20%] md:object-[right_20%] contrast-[1.12] saturate-[1.05] brightness-[1.0]" 
+            className="object-cover object-[center_20%] md:object-[right_20%] contrast-[1.25] saturate-[1.12] brightness-[1.02]" 
             priority 
           />
         </motion.div>
-        {/* Soft targeted gradient to shield text on the left while keeping the image crisp on the right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 z-20 pointer-events-none" style={{ boxShadow: 'inset 0 0 100px 40px #0a0a0a' }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-20 pointer-events-none" />
+        {/* Directed linear gradient protecting text on the left, keeping the athlete razor sharp on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 via-45% to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent z-20 pointer-events-none" />
       </div>
 
       <div className="container mx-auto px-4 z-20 relative">

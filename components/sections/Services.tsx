@@ -68,13 +68,12 @@ export function Services() {
           alt="Background" 
           fill 
           priority
-          className="object-cover object-center opacity-80 lg:opacity-85 contrast-[1.15] saturate-[1.05] brightness-[1.0]" 
+          className="object-cover object-center opacity-100 contrast-[1.25] saturate-[1.12] brightness-[1.0]" 
         />
         {/* Gradients to blend edges and make text readable */}
-        <div className="absolute inset-0 bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent" />
-        <div className="absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-[#0a0a0a] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a]/75 via-60% to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

@@ -15,20 +15,19 @@ export function BreakSection() {
           whileInView={{ y: 0 }}
           viewport={{ margin: "-100px" }}
           transition={{ duration: 1.5, ease: customEase }}
-          className="absolute inset-0 opacity-80 md:opacity-85"
+          className="absolute inset-0 opacity-100"
         >
           <Image 
             src="/images/gallery1.jpg" 
             alt="Muhammad Faisal Wraich Training" 
             fill 
             priority
-            className="object-cover object-center contrast-[1.15] saturate-[1.05] brightness-[1.0] scale-105" 
+            className="object-cover object-center contrast-[1.25] saturate-[1.12] brightness-[1.0] scale-105" 
           />
         </motion.div>
 
         {/* Gradient edge blending to fade into background color */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] z-10 pointer-events-none" />
-        <div className="absolute inset-0 z-10 pointer-events-none" style={{ boxShadow: 'inset 0 0 100px 40px #0a0a0a' }} />
       </div>
 
       <div className="container mx-auto px-4 z-20 relative text-center">
