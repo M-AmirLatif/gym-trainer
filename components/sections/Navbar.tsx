@@ -56,9 +56,9 @@ export function Navbar() {
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-1.5 font-black text-sm sm:text-base uppercase tracking-wider text-white shrink-0 hover:opacity-90 transition-opacity">
-            <span className="text-[#ff3b30]">Muhammad Faisal</span>
-            <span className="text-zinc-400 font-light hidden sm:inline">Wraich</span>
+          <a href="#" className="flex items-center gap-1.5 font-black text-sm sm:text-base md:text-lg uppercase tracking-wider shrink-0 hover:opacity-90 transition-opacity">
+            <span className="text-white font-black">Muhammad Faisal</span>
+            <span className="text-[#ff3b30] font-black">Wraich</span>
           </a>
 
           {/* Desktop Navigation Links (Single-word, non-wrapping) */}
@@ -110,8 +110,8 @@ export function Navbar() {
             className="fixed inset-0 z-[60] bg-[#0a0a0a] flex flex-col justify-between px-6 sm:px-10 py-8 overflow-y-auto"
           >
             <div className="flex items-center justify-between pb-6 border-b border-white/10">
-              <span className="font-bold text-base uppercase text-[#ff3b30]">
-                Muhammad Faisal Wraich
+              <span className="font-black text-base uppercase tracking-wider">
+                <span className="text-white">Muhammad Faisal</span> <span className="text-[#ff3b30]">Wraich</span>
               </span>
               <button 
                 className="text-white p-2 rounded-xl bg-white/5 border border-white/10" 

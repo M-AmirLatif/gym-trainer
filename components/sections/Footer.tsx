@@ -44,8 +44,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-12 border-b border-white/10 pb-12">
           
           <div className="md:col-span-12 lg:col-span-6">
-            <h1 className="font-bold text-2xl uppercase tracking-wider text-white mb-4">
-              <span className="text-[#ff3b30]">Muhammad Faisal Wraich</span>
+            <h1 className="font-black text-2xl uppercase tracking-wider text-white mb-4">
+              <span className="text-white">Muhammad Faisal</span> <span className="text-[#ff3b30]">Wraich</span>
             </h1>
             <p className="text-zinc-500 font-light text-sm leading-relaxed max-w-sm">
               Muhammad Faisal Wraich. Elite online coaching, custom nutrition, and professional prep via WhatsApp.
