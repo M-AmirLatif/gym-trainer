@@ -54,11 +54,21 @@ export function Footer() {
 
           <div className="md:col-span-6 lg:col-span-3">
             <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
-            <ul className="space-y-3">
-              {['Home', 'About', 'Services', 'Transformations', 'Pricing', 'FAQ'].map(link => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase()}`} className="text-zinc-500 hover:text-[#ff3b30] text-sm transition-colors">
-                    {link}
+            <ul className="grid grid-cols-2 gap-2.5">
+              {[
+                { name: 'About', href: '#about' },
+                { name: 'Services', href: '#services' },
+                { name: 'Methodology', href: '#methodology' },
+                { name: 'Calculator', href: '#calculator' },
+                { name: 'Global', href: '#global' },
+                { name: 'Results', href: '#transformations' },
+                { name: 'Case Studies', href: '#case-studies' },
+                { name: 'Pricing', href: '#pricing' },
+                { name: 'FAQ', href: '#faq' },
+              ].map(link => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-zinc-500 hover:text-[#ff3b30] text-xs font-medium uppercase tracking-wider transition-colors">
+                    {link.name}
                   </a>
                 </li>
               ))}

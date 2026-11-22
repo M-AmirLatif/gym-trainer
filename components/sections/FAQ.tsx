@@ -7,47 +7,80 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { HelpCircle } from "lucide-react";
 
 export function FAQ() {
   const customEase = [0.22, 1, 0.36, 1] as const;
 
   const faqs = [
     {
-      question: "What are your consultation timings?",
-      answer: "I am available daily from 1 PM to 4 PM for 1-on-1 calls, check-ins, and direct support. Outside these hours, you can still drop messages and I'll get back as quickly as possible.",
+      question: "I live outside Pakistan (UK, USA, UAE, Canada). How does remote coaching work?",
+      answer:
+        "Over 40% of our active roster lives overseas. Everything is run seamlessly via WhatsApp. You receive localized grocery recommendations (e.g. Tesco, Sainsbury's, Walmart, Costco, Lulu, Carrefour) with exact halal alternatives. Whenever you perform compound lifts, you send brief video clips of your working sets, and Faisal sends back detailed voice or annotated video critiques on bar path, depth, and tempo within 12 hours.",
     },
     {
-      question: "How does the WhatsApp coaching work exactly?",
-      answer: "It's highly personalized. We start with an initial call to discuss your baseline and goals. I then send your customized diet and training plan directly to your WhatsApp. You will send daily or weekly check-ins (depending on your tier) and videos of your lifts for form correction.",
+      question: "What are your consultation and check-in timings?",
+      answer:
+        "Coach Faisal is available daily from 1:00 PM to 4:00 PM PKT for scheduled 1-on-1 calls, check-in reviews, and form audits. Outside these core hours, you can message questions on WhatsApp at any time, and you will receive priority answers within our guaranteed daily response window.",
     },
     {
-      question: "Are the diet and training plans really customized?",
-      answer: "100%. No cookie-cutter PDF templates. Every macro is calculated for your specific metabolic rate, lifestyle constraints, and preferences. If you have medical conditions (e.g., diabetes, thyroid issues), the plan is adapted safely.",
+      question: "How do you handle dietary preferences, family dinners, and social outings?",
+      answer:
+        "We reject crash starvation diets and eating boiled chicken from plastic tupperware all day. We use flexible macronutrient programming calibrated to your metabolic rate. You are taught how to budget calories for dining out at restaurants, family gatherings, weddings, and business trips without setting back your progress.",
     },
     {
-      question: "What is your pricing and refund policy?",
-      answer: "Our standard plan starts at 25,000 PKR per month, offering great value for elite-level guidance. Due to the highly personalized nature of the programming and time invested upfront, we do not offer refunds once the customized plan is delivered.",
+      question: "I have a medical condition (Diabetes, Thyroid, High BP, PCOS, Disc Bulge). Is this safe?",
+      answer:
+        "Yes, absolutely. Faisal has extensive practical experience adapting programs for insulin resistance, hypothyroidism, PCOS, and orthopedic joint rehabilitations. Every single exercise is selected to avoid spinal compression or joint impingement, and your nutritional macro balance is structured to stabilize insulin and inflammatory markers safely.",
     },
     {
-      question: "How quickly can I get started?",
-      answer: "Click the WhatsApp button anywhere on the site, send a message detailing which plan you're interested in, and we can set up your initial consultation call within 24 hours.",
-    }
+      question: "Do I need expensive supplements or anabolic steroids to get results?",
+      answer:
+        "No. 95% of your transformation comes from progressive overload in the gym, calorie and protein discipline, and quality sleep. We only suggest basic, evidence-backed supplements (such as pure creatine monohydrate, quality whey protein, and vitamin D3/Omega-3) if needed for convenience. We never push proprietary or unnecessary pill stacks.",
+    },
+    {
+      question: "What if I travel frequently or have access only to a hotel or home gym?",
+      answer:
+        "Your program is engineered around the equipment you actually possess. If you only have dumbbells and a pull-up bar at home, or if you rotate between hotel gyms while traveling, your exercises are adapted using progressive calisthenics, bands, and dumbbell mechanics to stimulate the exact same muscle fibers.",
+    },
+    {
+      question: "What international payment methods are accepted?",
+      answer:
+        "We support seamless international remittances including Wise (formerly TransferWise), Payoneer, Direct Bank Wire Transfers, Remitly, Western Union, and Ria alongside domestic Pakistani accounts (Meezan, HBL, Allied, Raast).",
+    },
+    {
+      question: "What is your refund policy?",
+      answer:
+        "Because our coaching involves bespoke, non-reusable physiological assessments, metabolic calculations, and customized workout programming written manually by Faisal upfront, all purchases are non-refundable once the plan has been delivered. We commit 100% of our energy to your results, and we expect that same commitment from you.",
+    },
   ];
 
   return (
-    <section id="faq" className="pt-8 pb-8 md:pt-12 md:pb-12 bg-[#0a0a0a] relative overflow-hidden">
-      <div className="container mx-auto px-4 max-w-3xl">
+    <section id="faq" className="py-16 md:py-24 bg-[#0a0a0a] relative overflow-hidden border-t border-white/5">
+      <div className="container mx-auto px-4 max-w-4xl relative z-10">
         
-        <div className="text-center mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#ff3b30] mb-4">
+            <HelpCircle className="w-4 h-4" /> Clear Answers & Transparency
+          </div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: customEase }}
-            className="text-4xl md:text-5xl font-black uppercase mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-black uppercase mb-4"
           >
-            Got <span className="text-[#ff3b30]">Questions?</span>
+            Frequently Asked <span className="text-[#ff3b30]">Questions</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: customEase, delay: 0.1 }}
+            className="text-zinc-400 text-lg font-light leading-relaxed"
+          >
+            Everything you need to know about our remote coaching workflow, methodology, and international protocols.
+          </motion.p>
         </div>
 
         <motion.div
@@ -58,11 +91,15 @@ export function FAQ() {
         >
           <Accordion className="w-full space-y-4">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border-b border-white/10 bg-zinc-900/30 rounded-2xl px-6 border-none mb-4">
-                <AccordionTrigger className="hover:no-underline hover:text-[#ff3b30] text-left text-lg font-bold py-6 transition-colors">
+              <AccordionItem 
+                key={i} 
+                value={`item-${i}`} 
+                className="border border-white/10 bg-[#121212]/80 backdrop-blur-md rounded-2xl px-6 md:px-8 transition-colors hover:border-white/20 overflow-hidden shadow-lg"
+              >
+                <AccordionTrigger className="hover:no-underline hover:text-[#ff3b30] text-left text-base md:text-lg font-bold py-6 transition-colors text-white">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-zinc-400 leading-relaxed font-light pb-6">
+                <AccordionContent className="text-zinc-400 leading-relaxed font-light pb-6 text-sm md:text-base border-t border-white/5 pt-4">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
