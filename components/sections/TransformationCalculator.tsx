@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calculator, Flame, Dumbbell, Sparkles, MessageCircle, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Calculator, Flame, MessageCircle } from "lucide-react";
 
 export function TransformationCalculator() {
   const customEase = [0.22, 1, 0.36, 1] as const;
@@ -18,19 +17,18 @@ export function TransformationCalculator() {
   const baseTDEE = Math.round(weightKg * 22 * activityMultiplier);
 
   let targetCalories = baseTDEE;
-  let proteinGrams = Math.round(weightKg * 2.2); // ~1g per lb
+  let proteinGrams = Math.round(weightKg * 2.2);
   let fatGrams = Math.round((targetCalories * 0.25) / 9);
 
   if (goal === "fat_loss") {
-    targetCalories = Math.round(baseTDEE * 0.8); // 20% deficit
-    proteinGrams = Math.round(weightKg * 2.4); // higher protein to preserve lean tissue
+    targetCalories = Math.round(baseTDEE * 0.8);
+    proteinGrams = Math.round(weightKg * 2.4);
     fatGrams = Math.round((targetCalories * 0.22) / 9);
   } else if (goal === "muscle_gain") {
-    targetCalories = Math.round(baseTDEE * 1.12); // 12% surplus
+    targetCalories = Math.round(baseTDEE * 1.12);
     proteinGrams = Math.round(weightKg * 2.0);
     fatGrams = Math.round((targetCalories * 0.25) / 9);
   } else {
-    // Recomposition
     targetCalories = baseTDEE;
     proteinGrams = Math.round(weightKg * 2.3);
     fatGrams = Math.round((targetCalories * 0.24) / 9);
@@ -39,14 +37,14 @@ export function TransformationCalculator() {
   const carbGrams = Math.max(50, Math.round((targetCalories - (proteinGrams * 4 + fatGrams * 9)) / 4));
 
   const goalName =
-    goal === "fat_loss" ? "Rapid Fat Loss" : goal === "muscle_gain" ? "Lean Muscle Hypertrophy" : "Body Recomposition";
+    goal === "fat_loss" ? "Rapid Fat Loss" : goal === "muscle_gain" ? "Muscle Hypertrophy" : "Body Recomposition";
 
   const waMessage = encodeURIComponent(
-    `Hello Coach Muhammad Faisal Wraich! I used your website assessment calculator.
+    `Hello Coach Faisal! I calculated my transformation targets:
 - Goal: ${goalName}
 - Gender: ${gender === "male" ? "Male" : "Female"}
 - Current Weight: ${weightKg} kg
-- Target Calories: ~${targetCalories} kcal
+- Estimated Target: ~${targetCalories} kcal/day
 I would like to apply for your 1-on-1 coaching program.`
   );
 
@@ -56,8 +54,8 @@ I would like to apply for your 1-on-1 coaching program.`
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-widest text-[#ff3b30] mb-4">
-            <Calculator className="w-4 h-4" /> Interactive Transformation Estimator
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-[#ff3b30] mb-4">
+            <Calculator className="w-3.5 h-3.5" /> Interactive Target Estimator
           </div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -73,18 +71,18 @@ I would like to apply for your 1-on-1 coaching program.`
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: customEase, delay: 0.1 }}
-            className="text-zinc-400 text-lg font-light leading-relaxed"
+            className="text-zinc-400 text-base md:text-lg font-light leading-relaxed"
           >
             Curious about what your body requires to shed fat or pack on muscle? Enter your basic numbers below to calculate your estimated metabolic blueprint.
           </motion.p>
         </div>
 
         {/* Calculator Interactive Box */}
-        <div className="max-w-5xl mx-auto bg-[#121212]/90 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="max-w-5xl mx-auto bg-[#121212]/95 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-10 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             
             {/* Inputs Column */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
               
               {/* Gender Selection */}
               <div>
@@ -97,7 +95,7 @@ I would like to apply for your 1-on-1 coaching program.`
                     onClick={() => setGender("male")}
                     className={`py-3 px-4 rounded-xl font-bold uppercase text-xs tracking-wider transition-all border ${
                       gender === "male"
-                        ? "bg-[#ff3b30] text-white border-[#ff3b30]"
+                        ? "bg-[#ff3b30] text-white border-[#ff3b30] shadow-md shadow-[#ff3b30]/20"
                         : "bg-white/5 text-zinc-400 border-white/10 hover:border-white/20"
                     }`}
                   >
@@ -108,7 +106,7 @@ I would like to apply for your 1-on-1 coaching program.`
                     onClick={() => setGender("female")}
                     className={`py-3 px-4 rounded-xl font-bold uppercase text-xs tracking-wider transition-all border ${
                       gender === "female"
-                        ? "bg-[#ff3b30] text-white border-[#ff3b30]"
+                        ? "bg-[#ff3b30] text-white border-[#ff3b30] shadow-md shadow-[#ff3b30]/20"
                         : "bg-white/5 text-zinc-400 border-white/10 hover:border-white/20"
                     }`}
                   >
@@ -134,7 +132,7 @@ I would like to apply for your 1-on-1 coaching program.`
                       onClick={() => setGoal(item.id as any)}
                       className={`py-3 px-2 sm:px-4 rounded-xl font-bold uppercase text-[11px] sm:text-xs tracking-wider transition-all border ${
                         goal === item.id
-                          ? "bg-[#ff3b30] text-white border-[#ff3b30]"
+                          ? "bg-[#ff3b30] text-white border-[#ff3b30] shadow-md shadow-[#ff3b30]/20"
                           : "bg-white/5 text-zinc-400 border-white/10 hover:border-white/20"
                       }`}
                     >
@@ -148,10 +146,10 @@ I would like to apply for your 1-on-1 coaching program.`
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">
-                    3. Current Weight
+                    3. Current Body Weight
                   </label>
-                  <span className="text-lg font-black text-white">
-                    {weightKg} kg <span className="text-zinc-500 text-xs">({Math.round(weightKg * 2.204)} lbs)</span>
+                  <span className="text-base sm:text-lg font-black text-white">
+                    {weightKg} kg <span className="text-zinc-500 text-xs font-normal">({Math.round(weightKg * 2.204)} lbs)</span>
                   </span>
                 </div>
                 <input
@@ -171,9 +169,9 @@ I would like to apply for your 1-on-1 coaching program.`
                 </label>
                 <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {[
-                    { id: "sedentary", label: "Desk Job (1-2x/wk)" },
-                    { id: "moderate", label: "Active (3-4x/wk)" },
-                    { id: "active", label: "Intense (5-6x/wk)" },
+                    { id: "sedentary", label: "Sedentary" },
+                    { id: "moderate", label: "Moderate (3-4d)" },
+                    { id: "active", label: "Active (5-6d)" },
                   ].map((act) => (
                     <button
                       key={act.id}
@@ -194,44 +192,50 @@ I would like to apply for your 1-on-1 coaching program.`
             </div>
 
             {/* Results Column */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-black/80 to-zinc-900/90 border border-white/10 p-6 sm:p-8 rounded-3xl relative overflow-hidden shadow-2xl">
-              <div className="text-xs font-bold uppercase tracking-widest text-[#ff3b30] mb-2 flex items-center gap-2">
-                <Flame className="w-4 h-4" /> Estimated Daily Protocol
+            <div className="lg:col-span-5 bg-gradient-to-br from-black/90 to-zinc-950 border border-white/10 p-6 sm:p-8 rounded-3xl flex flex-col justify-between shadow-2xl">
+              <div>
+                <div className="text-xs font-bold uppercase tracking-widest text-[#ff3b30] mb-2 flex items-center gap-2">
+                  <Flame className="w-4 h-4" /> Daily Protocol Target
+                </div>
+
+                <div className="text-4xl sm:text-5xl font-black text-white tracking-tight mb-1">
+                  {targetCalories} <span className="text-lg font-bold text-zinc-400">kcal/day</span>
+                </div>
+                <p className="text-zinc-400 text-xs font-light mb-6">
+                  Calibrated for {goalName} without metabolic slowdown.
+                </p>
+
+                {/* Macros Breakdown */}
+                <div className="grid grid-cols-3 gap-2 py-4 border-y border-white/10 mb-6 text-center">
+                  <div className="bg-white/5 rounded-2xl p-3 border border-white/5">
+                    <div className="text-[11px] text-zinc-400 uppercase font-semibold">Protein</div>
+                    <div className="text-xl font-black text-white mt-0.5">{proteinGrams}g</div>
+                  </div>
+                  <div className="bg-white/5 rounded-2xl p-3 border border-white/5">
+                    <div className="text-[11px] text-zinc-400 uppercase font-semibold">Carbs</div>
+                    <div className="text-xl font-black text-white mt-0.5">{carbGrams}g</div>
+                  </div>
+                  <div className="bg-white/5 rounded-2xl p-3 border border-white/5">
+                    <div className="text-[11px] text-zinc-400 uppercase font-semibold">Fats</div>
+                    <div className="text-xl font-black text-white mt-0.5">{fatGrams}g</div>
+                  </div>
+                </div>
               </div>
 
-              <div className="text-4xl sm:text-5xl font-black text-white tracking-tight mb-1">
-                {targetCalories} <span className="text-lg font-bold text-zinc-400">kcal/day</span>
+              <div>
+                <a
+                  href={`https://wa.me/1234567890?text=${waMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2.5 font-bold uppercase tracking-wider text-xs sm:text-sm bg-[#ff3b30] hover:bg-[#ff3b30]/90 text-white rounded-full py-4 px-6 transition-transform hover:scale-[1.02] shadow-lg shadow-[#ff3b30]/25 text-center leading-normal"
+                >
+                  <MessageCircle className="w-5 h-5 shrink-0" />
+                  <span>Start Plan With Faisal</span>
+                </a>
+                <p className="text-[11px] text-zinc-500 text-center mt-3 font-light leading-relaxed">
+                  *Estimates only. Actual coaching factors in insulin sensitivity, digestion, and medical history.
+                </p>
               </div>
-              <p className="text-zinc-400 text-xs font-light mb-6">
-                Calibrated for {goalName} with zero metabolic damage.
-              </p>
-
-              {/* Macros Breakdown */}
-              <div className="grid grid-cols-3 gap-2 py-4 border-y border-white/10 mb-6 text-center">
-                <div className="bg-white/5 rounded-xl p-3">
-                  <div className="text-xs text-zinc-400 uppercase font-semibold">Protein</div>
-                  <div className="text-xl font-black text-white">{proteinGrams}g</div>
-                </div>
-                <div className="bg-white/5 rounded-xl p-3">
-                  <div className="text-xs text-zinc-400 uppercase font-semibold">Carbs</div>
-                  <div className="text-xl font-black text-white">{carbGrams}g</div>
-                </div>
-                <div className="bg-white/5 rounded-xl p-3">
-                  <div className="text-xs text-zinc-400 uppercase font-semibold">Fats</div>
-                  <div className="text-xl font-black text-white">{fatGrams}g</div>
-                </div>
-              </div>
-
-              <a
-                href={`https://wa.me/1234567890?text=${waMessage}`}
-                className="w-full inline-flex items-center justify-center font-bold uppercase tracking-wider text-xs sm:text-sm bg-[#ff3b30] hover:bg-[#ff3b30]/90 text-white rounded-full py-4 px-6 transition-transform hover:scale-[1.02] shadow-lg shadow-[#ff3b30]/20 text-center"
-              >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Claim Custom Plan With Faisal
-              </a>
-              <p className="text-[11px] text-zinc-500 text-center mt-3 font-light">
-                *Estimates only. Actual coaching factors in hormonal health, insulin sensitivity, and medical history.
-              </p>
             </div>
 
           </div>
